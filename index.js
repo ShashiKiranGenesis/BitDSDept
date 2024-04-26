@@ -2,6 +2,7 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const session = require("express-session");
+const cors = require("cors");
 
 //Imports from server files
 const authRoutes = require("./routes/authRoutes");
@@ -28,6 +29,13 @@ const port = process.env.SERV_PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session(sessionOpts));
+app.use(cors(
+    {
+        origin: 'http://localhost:5173',
+        methods: ['POST', 'GET', 'OPTIONS'], // Allow these methods
+        allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials'], // Allow these headers
+        credentials: true, // Allow credentials (cookies)
+    }));
 
 //////////////////////////////////////////////
 ////////////All the auth Routes///////////////
