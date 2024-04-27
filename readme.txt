@@ -18,14 +18,20 @@ Initially to start adding employees, go to routes/authRoutes.js, comment out the
 
 STATUS CODE SUMMARY
 
+TABLE NUMBERS
+01- Departments Table
+02- Employees Table
+03- Designations Table
+04- Users Table (x)
+05- Employee-Designation Table(x)
+06- Qualifications Table (x)
+07- Academic Levels
+08- Courses
+09- I_S_T_H (x) <Instructor Semester Teaching Hours>
 
 DB: Data Base
     TC: Table Creation
-        01-Departments Table
-        02-Employees Table
-        03-Designations Table
-        04-Users Table
-        
+    SD: Table Seeding    
 
 SERV: Express app Server
     ST: Server Transformation
