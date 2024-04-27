@@ -6,7 +6,7 @@ const flushAcLevels = `
     DELETE FROM academic_levels;
 `;
 
-// This query will reseed the academic_levels table with data collected on
+// This query will reseed the academic_levels table
 const seedAcLevels = `
     INSERT INTO academic_levels (level_name) 
     VALUES
