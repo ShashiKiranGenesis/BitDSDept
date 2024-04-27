@@ -13,14 +13,14 @@ const createTableQuery = `
         mobile VARCHAR(10) UNIQUE NOT NULL,
         emergency_mobile VARCHAR(10) NOT NULL,
         pad VARCHAR(270) NOT NULL,
-        email_address VARCHAR(40) UNIQUE
+        email_address VARCHAR(40) UNIQUE,
+		pan_number VARCHAR(60) UNIQUE
 	);
 `;
 
 // For any Altering in the future
 const alterTableQuery = `
-	ALTER TABLE employees
-	ADD COLUMN pan_number VARCHAR(60) UNIQUE
+	
 `;
 
 (async function () {
