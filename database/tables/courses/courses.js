@@ -10,13 +10,15 @@ const createTableQuery = `
         level_id INT,
         cpw INT,
         code VARCHAR(30) NOT NULL,
-        FOREIGN KEY (level_id) REFERENCES academic_levels(id)
+        FOREIGN KEY (level_id) REFERENCES academic_levels(id),
+        INDEX idx_course_name (name)
     );
 `;
 
 // For any Altering in the Future
 const alterTableQuery = `
-	
+    ALTER TABLE courses
+    ADD INDEX idx_course_name (name);
 `;
 
 (async function () {
