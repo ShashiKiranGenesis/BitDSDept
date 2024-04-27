@@ -7,9 +7,9 @@ const createTableQuery = `
     CREATE TABLE qualifications (
         id INT AUTO_INCREMENT PRIMARY KEY,
         vtu_id VARCHAR(15) NOT NULL,
-        name_of_course VARCHAR(255) NOT NULL,
-        duration_days INT NOT NULL,
-        name_of_school VARCHAR(255) NOT NULL,
+        course_name VARCHAR(255) NOT NULL,
+        duration INT NOT NULL,
+        school VARCHAR(255) NOT NULL,
         sponsoring_agency VARCHAR(255),
         end_date DATE NOT NULL,
         place VARCHAR(100) NOT NULL,
