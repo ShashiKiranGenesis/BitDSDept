@@ -7,14 +7,14 @@ const createTableQuery = `
     CREATE TABLE instructor_semester_teaching_hours (
         id INT AUTO_INCREMENT PRIMARY KEY,
         vtu_id VARCHAR(15) NOT NULL,
-        course_name VARCHAR(100) NOT NULL,
+        course_id INT NOT NULL,
         semester INT NOT NULL,
         tce INT NOT NULL,
         pce INT NOT NULL,
         academic_year_start DATE NOT NULL,
         academic_year_end DATE NOT NULL,
         FOREIGN KEY (vtu_id) REFERENCES employees(vtu_id),
-        FOREIGN KEY (course_name) REFERENCES courses(name)
+        FOREIGN KEY (course_id) REFERENCES courses(id)
     );
 `;
 
