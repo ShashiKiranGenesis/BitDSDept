@@ -6,7 +6,7 @@ const connect = require("../../connect");
 const createTableQuery = `
     CREATE TABLE academic_levels (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        level_name VARCHAR(50) NOT NULL UNIQUE
+        name VARCHAR(30) NOT NULL UNIQUE
     );
 `;
 
