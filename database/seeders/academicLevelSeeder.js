@@ -8,7 +8,7 @@ const flushAcLevels = `
 
 // This query will reseed the academic_levels table
 const seedAcLevels = `
-    INSERT INTO academic_levels (level_name) 
+    INSERT INTO academic_levels (name) 
     VALUES
         ('Undergraduate'),
         ('Postgraduate'),
