@@ -64,7 +64,7 @@ router.route("/")
             pad = "not-entered",
             email_address = "not-entered",
             pan_number = "not-entered",
-        } = req.body;
+        } = req.body.empInitDetails;
 
         const arguments = {
             vtu_id,
