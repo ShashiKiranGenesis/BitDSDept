@@ -19,7 +19,7 @@ const getISTHDetailsByVtuIdAndYear = `
 `;
 
 
-async function getEmpDetailsByVtuId(vtu_id, year) {
+async function getISTHDetailsByVtuIdAndYear(vtu_id, year) {
     let result;
     let connection;
     const payload = [vtu_id, year];
@@ -56,4 +56,4 @@ async function getEmpDetailsByVtuId(vtu_id, year) {
 }
 
 
-module.exports = getEmpDetailsByVtuId;
+module.exports = getISTHDetailsByVtuIdAndYear;
