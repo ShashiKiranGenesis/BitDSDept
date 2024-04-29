@@ -8,6 +8,7 @@ const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const employeesRoutes = require("./routes/employeesRoutes");
 const userRoutes = require("./routes/userRoutes");
+const TLEARoutes = require("./routes/TLEA/TLEA");
 
 const { HOUR, DAY } = require("./helpers/time");
 const routeNotFoundResponse = require("./helpers/response/routeNotFoundResponse");
@@ -47,6 +48,8 @@ app.use("/auth", authRoutes);
 app.use("/employees", employeesRoutes);
 
 app.use("/user", userRoutes);
+
+app.use("/tlea", TLEARoutes);
 
 app.use("/", function (req, res) {
     res.send(routeNotFoundResponse(req, res));
