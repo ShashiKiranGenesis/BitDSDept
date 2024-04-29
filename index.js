@@ -10,6 +10,7 @@ const employeesRoutes = require("./routes/employeesRoutes");
 const userRoutes = require("./routes/userRoutes");
 
 const { HOUR, DAY } = require("./helpers/time");
+const routeNotFoundResponse = require("./helpers/response/routeNotFoundResponse");
 
 //Configuring the Backend middlewares and dependencies
 const sessionOpts = {
@@ -46,6 +47,10 @@ app.use("/auth", authRoutes);
 app.use("/employees", employeesRoutes);
 
 app.use("/user", userRoutes);
+
+app.use("/", function (req, res) {
+    res.send(routeNotFoundResponse(req, res));
+});
 
 //////////////////////////////////////////////
 //////////////////////////////////////////////
