@@ -3,7 +3,7 @@ const connect = require("./../../connect");
 const generateResponse = require("./../../../helpers/response/generateResponse");
 
 // The Query to fetch isthDetails of an Employee belonging to a particular year
-const getISTHDetailsByVtuIdAndYear = `
+const getISTHDetailsByVtuIdAndYearQuery = `
     SELECT 
         isth.id AS id,
         c.name AS course_name,
@@ -27,7 +27,7 @@ async function getISTHDetailsByVtuIdAndYear(vtu_id, year) {
     try {
         connection = await connect();
 
-        const [data] = await connection.query(getISTHDetailsByVtuIdAndYear, payload);
+        const [data] = await connection.query(getISTHDetailsByVtuIdAndYearQuery, payload);
 
         if (data.length === 0) {
             result = generateResponse(
