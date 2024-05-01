@@ -14,7 +14,8 @@ const createTableQuery = `
         academic_year_start DATE NOT NULL,
         academic_year_end DATE NOT NULL,
         FOREIGN KEY (vtu_id) REFERENCES employees(vtu_id),
-        FOREIGN KEY (course_id) REFERENCES courses(id)
+        FOREIGN KEY (course_id) REFERENCES courses(id),
+        CONSTRAINT unique_row_isth UNIQUE(vtu_id, course_id, semester, tce, pce, academic_year_start, academic_year_end)
     );
 `;
 
