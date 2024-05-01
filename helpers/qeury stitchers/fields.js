@@ -1,8 +1,3 @@
-// Imports from server Files
-const defaultResponse = require("../response/defaultResponse");
-const generateResponse = require("../response/generateResponse");
-
-
 const hasSameFields = function (obj1 = {}, obj2 = {}) {
     const keys1 = Object.keys(obj1);
     const keys2 = Object.keys(obj2);
