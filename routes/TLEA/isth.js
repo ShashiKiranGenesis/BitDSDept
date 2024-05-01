@@ -27,9 +27,7 @@ router.route("/:vtu_id")
     // ENDPOINT(/tlea/isth/:vtu_id)
     // This Route will fetch all the Information of one employee's isth details of metioned year
     .get(async function (req, res) {
-        // This Route Requires the particular employee to be signed in and to also 
-        // include 'year' in the query.
-
+        // This Route Requires the particular employee to be signed in and to also include 'year' in the query.
         const { year: academic_year_start = "not-entered" } = req.query;
         const { vtu_id = "not-entered" } = req.params;
         const { vtu_id: userId } = req.session;
@@ -95,6 +93,7 @@ router.route("/:vtu_id")
 
 // ENDPOINT(/tlea/isth/:vtu_id)
 // This route is used to delete a row from the ISTH table by id
+// Expects isth-row-id in params and employee can just delete his own details 
 router.delete("/:id", async function (req, res) {
     const { id="not-entered" } = req.params;
     const { vtu_id: userId } = req.session;
