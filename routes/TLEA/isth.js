@@ -43,7 +43,7 @@ router.route("/:vtu_id")
         if (vtu_id != userId && !isAuthorized(req, 4))
             result = notAuthorizedResponse(req, res);
 
-        else if (validateArguments(...Object.values(arguments)))
+        else if (!validateArguments(...Object.values(arguments)))
             result = invalidArgumentsResponse(req, res, arguments);
 
         else
