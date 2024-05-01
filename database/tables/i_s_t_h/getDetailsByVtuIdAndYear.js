@@ -41,7 +41,7 @@ async function getISTHDetailsByVtuIdAndYear(vtu_id, year) {
                 false,
                 "ISTH Details Found, details sent!!",
                 200,
-                { details: data[0] }
+                { details: data }
             );
         }
 
