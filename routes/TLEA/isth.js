@@ -10,6 +10,8 @@ const validateArguments = require("./../../helpers/validation/validateArguments"
 const handleGetDetailsByVtuIdAndYear = require("../../handlers/TLEA/ISTH/handleGetDetailsByVtuIdAndYear");
 const invalidArgumentsResponse = require("../../helpers/response/invalidArgumentsResponse");
 const handleInsertOneISTHRow = require("../../handlers/TLEA/ISTH/handleEnterISTHDetails");
+const deleteOneRowById = require("../../database/tables/i_s_t_h/deleteOneRowById");
+const getOneRowById = require("../../database/tables/i_s_t_h/getOneRowById");
 
 
 //Configuring the Backend middlewares and dependencies
@@ -90,6 +92,35 @@ router.route("/:vtu_id")
 
         res.send(result);
     })
+
+// ENDPOINT(/tlea/isth/:vtu_id)
+// This route is used to delete a row from the ISTH table by id
+router.delete("/:id", async function (req, res) {
+    const { id="not-entered" } = req.params;
+    const { vtu_id: userId } = req.session;
+    let vtu_id;
+    const arguments = { id };
+
+    if (!isAuthorized(req, 1))
+        result = notAuthorizedResponse(req, res);
+
+    else if (!validateArguments(...Object.values(arguments)))
+        result = invalidArgumentsResponse(req, res, arguments);
+
+    else {
+        result = await getOneRowById(id);
+        vtu_id = result.payload.vtu_id ;
+        
+        if(!result.error) {
+            if(vtu_id!==userId && !isAuthorized(req, 4))
+                result = notAuthorizedResponse(req, res);
+            else 
+                result = await deleteOneRowById(id);
+        }
+    }
+
+    res.send(result);
+})
 
 
 ///////////////////////////////////////////////////////////////////////////////
