@@ -17,6 +17,7 @@ const invalidArgumentsResponse = require("./../helpers/response/invalidArguments
 const notAuthorizedResponse = require("../helpers/response/notAuthorizedResponse");
 const validArguments = require("../helpers/validation/validateArguments");
 const getAllDesignations = require("../database/connector tables/employee_designation/getAllDesignations");
+const getDesignationByVtuId = require("../database/connector tables/employee_designation/getDesignationsByVtuId");
 
 
 //Configuring the Backend middlewares and dependencies
@@ -119,6 +120,26 @@ router.route("/designations")
         else
             result = await assignDesignationByVtuId(vtu_id, designation);
 
+
+        res.send(result);
+    })
+
+// ENDPOINT - ("/employees/designations/:vtu_id")
+router.route("/designations/:vtu_id")
+    // This Route will allow to get All Designations of a Particular Employee
+    .get(async function (req, res) {
+        let result;
+        const { vtu_id = "not-entered" } = req.params;
+        const { vtu_id: userId } = req.session || -1;
+        const arguments = { vtu_id };
+
+        // Employee can fetch his own details or hod can fetch all Details
+        if (vtu_id !== userId && !isAuthorized(req, 4))
+            result = notAuthorizedResponse(req, res);
+        else if (!validArguments(...Object.values(arguments)))
+            result = invalidArgumentsResponse(arguments);
+        else
+            result = await getDesignationByVtuId(vtu_id);
 
         res.send(result);
     })
