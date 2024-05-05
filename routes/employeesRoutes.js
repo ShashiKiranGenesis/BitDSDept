@@ -16,6 +16,7 @@ const defaultResponse = require("../helpers/response/defaultResponse");
 const invalidArgumentsResponse = require("./../helpers/response/invalidArgumentsResponse");
 const notAuthorizedResponse = require("../helpers/response/notAuthorizedResponse");
 const validArguments = require("../helpers/validation/validateArguments");
+const getAllDesignations = require("../database/connector tables/employee_designation/getAllDesignations");
 
 
 //Configuring the Backend middlewares and dependencies
@@ -87,6 +88,39 @@ router.route("/")
         }
 
         res.send(result);
+    });
+
+
+// ENDPOINT - ("/employees/designations")
+router.route("/designations")
+    // This route allows us to fetch all rows of the employee designations table
+    .get(async function (req, res) {
+        let result;
+
+        if (!isAuthorized(req, 5))
+            result = notAuthorizedResponse(req, res);
+
+        result = await getAllDesignations();
+
+        res.send(result);
+    })
+    // This route allows us to assign a role to an employee
+    .post(async function (req, res) {
+        let { designation = "not-entered", vtu_id = "not-entered" } = req.body;
+        const arguments = { designation, vtu_id };
+
+        let result;
+
+        // This Operation requires user to be of level 5 - Admin
+        if (!getUserLevel(req) >= 5)
+            result = notAuthorizedResponse(req, res);
+        else if (!validArguments(...Object.values(arguments)))
+            result = invalidArgumentsResponse(arguments);
+        else
+            result = await assignDesignationByVtuId(vtu_id, designation);
+
+
+        res.send(result);
     })
 
 
@@ -130,24 +164,6 @@ router.route("/:vtu_id")
     })
 
 
-// This route allows us to assign a role to an employee
-router.post("/assignDesignation", async function (req, res) {
-    let { designation = "not-entered", vtu_id = "not-entered" } = req.body;
-    const arguments = { designation, vtu_id };
-
-    let result;
-
-    // This Operation requires user to be of level 5 - Admin
-    if (!getUserLevel(req) >= 5) {
-        result = notAuthorizedResponse(req, res);
-    } else if (!validArguments(...Object.values(arguments))) {
-        result = invalidArgumentsResponse(arguments);
-    } else {
-        result = await assignDesignationByVtuId(vtu_id, designation);
-    }
-
-    res.send(result);
-});
 
 
 // ============================================================================
