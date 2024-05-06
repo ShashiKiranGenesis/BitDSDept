@@ -25,7 +25,7 @@ router.route("/")
     .get(async function (req, res) {
         let result;
 
-        if (!isAuthorized(req, 2))
+        if (!isAuthorized(req, 1))
             result = notAuthorizedResponse(req, res);
         else
             result = await getAllDesignations();
