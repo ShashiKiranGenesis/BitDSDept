@@ -5,8 +5,8 @@ const connect = require("../../connect");
 // The original academic_levels table schema
 const createTableQuery = `
     CREATE TABLE academic_levels (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(30) NOT NULL UNIQUE
+        name VARCHAR(50) PRIMARY KEY,
+        duration_in_months TINYINT NOT NULL
     );
 `;
 
