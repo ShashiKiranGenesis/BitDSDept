@@ -6,19 +6,18 @@ const connect = require("../../connect");
 const createTableQuery = `
     CREATE TABLE courses (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(100) NOT NULL,
-        level_id INT,
-        cpw INT,
-        code VARCHAR(30) NOT NULL,
-        FOREIGN KEY (level_id) REFERENCES academic_levels(id),
+        name VARCHAR(60) NOT NULL,
+        a_level VARCHAR(50) NOT NULL,
+        cpw TINYINT NOT NULL,
+        lpw TINYINT NOT NULL,
+        code VARCHAR(10) NOT NULL,
+        FOREIGN KEY (a_level) REFERENCES academic_levels(name),
         INDEX idx_course_name (name)
     );
 `;
 
 // For any Altering in the Future
 const alterTableQuery = `
-    ALTER TABLE courses
-    ADD INDEX idx_course_name (name);
 `;
 
 (async function () {
