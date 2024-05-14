@@ -16,6 +16,12 @@ const createTableQuery = `
     );
 `;
 
+// More Details about the Table
+/*  
+    cpw - prescribed theory classes per week
+    lpw - prescribed lab classes per week
+*/
+
 // For any Altering in the Future
 const alterTableQuery = `
 `;
