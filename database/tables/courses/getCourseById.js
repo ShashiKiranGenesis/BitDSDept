@@ -28,7 +28,7 @@ async function getCourseById(id) {
                 true,
                 "Course not found",
                 404,
-                {}
+                { id }
             );
 
     } catch (error) {
@@ -38,7 +38,7 @@ async function getCourseById(id) {
             true,
             error.message,
             error.errno,
-            {}
+            { id }
         );
 
     } finally {

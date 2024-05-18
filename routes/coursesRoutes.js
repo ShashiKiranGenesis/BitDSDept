@@ -23,6 +23,7 @@ const router = express.Router({ strict: true });
 
 // ENDPOINT("/courses")
 router.route("/")
+
     // This route will fetch all the available courses
     .get(async function (req, res) {
         let result;
@@ -38,12 +39,12 @@ router.route("/")
     // This route will allow us to add more courses
     .post(async function (req, res) {
         let result;
-        const { 
-            name = "not-entered", 
-            a_level = "not-entered", 
-            cpw = "not-entered", 
-            lpw = "not-entered", 
-            code = "not-entered" 
+        const {
+            name = "not-entered",
+            a_level = "not-entered",
+            cpw = "not-entered",
+            lpw = "not-entered",
+            code = "not-entered"
         } = req.body;
 
         const arguments = { name, a_level, cpw, lpw, code };
@@ -76,21 +77,12 @@ router.route("/:id")
 
     // This route will allow us to update a course by ID
     .patch(async function (req, res) {
-        let result;
-        const { id } = req.params;
-        const { name, a_level, cpw, lpw, code } = req.body;
-
-        const arguments = { name, a_level, cpw, lpw, code };
-
-        // Requires Admin Level Authorization to update a Course
-        if (!isAuthorized(req, 5))
-            result = notAuthorizedResponse(req, res);
-        else if (!validArguments(...Object.values(arguments)))
-            result = invalidArgumentsResponse(req, res);
-        else
-            result = await updateCourse(id, name, a_level, cpw, lpw, code);
-
-        res.send(result);
+        res.send(generateResponse(
+            false,
+            "Coming Soon",
+            500,
+            null
+        ));
     })
 
     // This route will allow us to delete a course by ID
