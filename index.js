@@ -8,7 +8,6 @@ const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const employeesRoutes = require("./routes/employeesRoutes");
 const userRoutes = require("./routes/userRoutes");
-const TLEARoutes = require("./routes/TLEA/TLEA");
 const designationRoutes = require("./routes/designationRoutes");
 
 const { HOUR, DAY } = require("./helpers/time");
@@ -49,8 +48,6 @@ app.use("/auth", authRoutes);
 app.use("/employees", employeesRoutes);
 
 app.use("/user", userRoutes);
-
-app.use("/tlea", TLEARoutes);
 
 app.use("/designations", designationRoutes);
 
