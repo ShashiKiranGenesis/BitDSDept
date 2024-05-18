@@ -8,11 +8,11 @@ const flushAcLevels = `
 
 // This query will reseed the academic_levels table
 const seedAcLevels = `
-    INSERT INTO academic_levels (name) 
+    INSERT INTO academic_levels (name, duration_in_months) 
     VALUES
-        ('Undergraduate'),
-        ('Postgraduate'),
-        ('Doctorate');
+        ('Bachelor of Engineering', 48),
+        ('Master of Engineering', 24),  
+        ('Doctor of Philosophy in Engineering', 60);
 `;
 
 (async function () {
