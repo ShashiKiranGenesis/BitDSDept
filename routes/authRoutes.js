@@ -123,7 +123,7 @@ router.use("/secret", function (req, res) {
             false,
             "User is currently Logged in!!",
             200,
-            { vtu_id: req.session.vtu_id, level: req.session.level }
+            req.session
         ))
     } else {
         res.send(notAuthorizedResponse(req, res));
