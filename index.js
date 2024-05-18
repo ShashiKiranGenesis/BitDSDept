@@ -4,13 +4,15 @@ const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
 
-//Imports from server files
+// ALL Sub Routes
 const authRoutes = require("./routes/authRoutes");
 const employeesRoutes = require("./routes/employeesRoutes");
 const userRoutes = require("./routes/userRoutes");
 const designationRoutes = require("./routes/designationRoutes");
 const courseRoutes = require("./routes/coursesRoutes");
+const tleaRoutes = require("./routes/TLEA/TLEA");
 
+//Imports from server files
 const { HOUR, DAY } = require("./helpers/time");
 const routeNotFoundResponse = require("./helpers/response/routeNotFoundResponse");
 
@@ -53,6 +55,8 @@ app.use("/user", userRoutes);
 app.use("/designations", designationRoutes);
 
 app.use("/courses", courseRoutes);
+
+app.use("/tlea", tleaRoutes);
 
 app.use("/", function (req, res) {
     res.send(routeNotFoundResponse(req, res));
