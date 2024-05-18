@@ -9,6 +9,7 @@ const authRoutes = require("./routes/authRoutes");
 const employeesRoutes = require("./routes/employeesRoutes");
 const userRoutes = require("./routes/userRoutes");
 const designationRoutes = require("./routes/designationRoutes");
+const courseRoutes = require("./routes/coursesRoutes");
 
 const { HOUR, DAY } = require("./helpers/time");
 const routeNotFoundResponse = require("./helpers/response/routeNotFoundResponse");
@@ -50,6 +51,8 @@ app.use("/employees", employeesRoutes);
 app.use("/user", userRoutes);
 
 app.use("/designations", designationRoutes);
+
+app.use("/courses", courseRoutes);
 
 app.use("/", function (req, res) {
     res.send(routeNotFoundResponse(req, res));
