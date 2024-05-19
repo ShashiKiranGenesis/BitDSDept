@@ -20,13 +20,21 @@ async function getISTHByVTUAndAcademicYear(vtu_id, academic_year_start, academic
     try {
         connection = await connect();
         const [data] = await connection.query(getISTHByVTUAndAcademicYearQuery, [vtu_id, academic_year_start, academic_year_end]);
-
-        result = generateResponse(
-            false,
-            "ISTH rows Fetched Successfully",
-            200,
-            data
-        );
+        
+        if (data.length > 0)
+            result = generateResponse(
+                false,
+                "ISTH rows Fetched Successfully",
+                200,
+                data
+            );
+        else
+            result = generateResponse(
+                true,
+                "No ISTH rows found",
+                404,
+                arguments
+            );
 
     } catch (error) {
         console.log("ERROR    Something went Wrong Fetching ISTH rows by VTU ID and Academic Year from the isth table");
