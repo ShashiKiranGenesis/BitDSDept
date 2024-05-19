@@ -30,13 +30,13 @@ router.use("/", function (req, res, next) {
 
 // ------------------------Protected Routes-------------------------------
 
-// Sub-route for 'isth'
+// Sub-route for 'isth' <instructor semester teaching hours>
 router.use("/isth", isthRouter);
 
-// Sub-route for 'ars'
+// Sub-route for 'ars' <additional resources to students>
 router.use("/ars", arsRouter);
 
-// Sub-route for 'itre'
+// Sub-route for 'itre' <innovative teaching and resource enhancement>
 router.use("/itre", itreRouter);
 
 // Sub-route for 'exam_duties'
