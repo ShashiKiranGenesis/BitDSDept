@@ -18,6 +18,8 @@ function logoutUser(req, res) {
     // Logs out the user
     req.session.vtu_id = undefined;
     req.session.level = undefined;
+    req.session.academic_year_start = undefined;
+    req.session.academic_year_end = undefined;
 
 
     return result;
