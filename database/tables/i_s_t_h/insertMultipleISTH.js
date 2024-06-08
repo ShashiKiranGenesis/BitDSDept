@@ -20,9 +20,7 @@ async function insertMultipleISTH(rows) {
                 `('${row.vtu_id}', '${row.course_name}', ${row.semester}, ${row.tce}, ${row.pce}, '${row.academic_year_start}', '${row.academic_year_end}')`
         ) .join(',');
 
-        insertMultipleISTHQuery += values;
-
-        const [data] = await connection.query(insertMultipleISTHQuery);
+        const [data] = await connection.query(insertMultipleISTHQuery + values);
 
         if (data.affectedRows === rows.length)
             result = generateResponse(
