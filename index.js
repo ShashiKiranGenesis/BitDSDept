@@ -11,6 +11,7 @@ const userRoutes = require("./routes/userRoutes");
 const designationRoutes = require("./routes/designationRoutes");
 const courseRoutes = require("./routes/coursesRoutes");
 const tleaRoutes = require("./routes/TLEA/TLEA");
+const cepdaRoutes = require("./routes/CEPDA/CEPDA");
 
 //Imports from server files
 const { HOUR, DAY } = require("./helpers/time");
@@ -57,6 +58,8 @@ app.use("/designations", designationRoutes);
 app.use("/courses", courseRoutes);
 
 app.use("/tlea", tleaRoutes);
+
+app.use("/cepda", cepdaRoutes);
 
 app.use("/", function (req, res) {
     res.send(routeNotFoundResponse(req, res));
