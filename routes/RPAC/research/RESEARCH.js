@@ -7,6 +7,7 @@ const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 
 // Importing subRoutes
 const ocrpcRouter = require("./o_c_r_p_c");
+const guidanceRouter = require("./research_guidance");
 
 // Configuring the Backend middlewares and dependencies
 const router = express.Router({ strict: true });
@@ -30,7 +31,8 @@ router.use("/", function (req, res, next) {
 // Sub-route for 'ocrpc' <On-Going Research Projects and Consultancies>
 router.use("/ocrpc", ocrpcRouter);
 
-
+// Sub-route for 'research_guidance'
+router.use("/guidance", guidanceRouter);
 
 // -----------------------------------------------------------------------
 
