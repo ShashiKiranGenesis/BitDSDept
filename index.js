@@ -12,6 +12,7 @@ const designationRoutes = require("./routes/designationRoutes");
 const courseRoutes = require("./routes/coursesRoutes");
 const tleaRoutes = require("./routes/TLEA/TLEA");
 const cepdaRoutes = require("./routes/CEPDA/CEPDA");
+const rpacRoutes = require("./routes/RPAC/RPAC");
 
 //Imports from server files
 const { HOUR, DAY } = require("./helpers/time");
@@ -60,6 +61,8 @@ app.use("/courses", courseRoutes);
 app.use("/tlea", tleaRoutes);
 
 app.use("/cepda", cepdaRoutes);
+
+app.use("/rpac", rpacRoutes);
 
 app.use("/", function (req, res) {
     res.send(routeNotFoundResponse(req, res));
