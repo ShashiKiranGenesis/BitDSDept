@@ -7,6 +7,7 @@ const isAuthorised = require("./../../helpers/authorization/isAuthorised");
 
 // Importing subRoutes
 const researchRoutes = require("./research/RESEARCH");
+const pandcRoutes = require("./programmes_and_conferences/PANDC");
 
 // Configuring the Backend middlewares and dependencies
 const router = express.Router({ strict: true });
@@ -30,6 +31,8 @@ router.use("/", function (req, res, next) {
 // Sub-route for research sub-section of the RPAC
 router.use("/research", researchRoutes);
 
+// Sub-route for programmes and conferences sub-section of the RPAC
+router.use("/pandc", pandcRoutes);
 
 
 
