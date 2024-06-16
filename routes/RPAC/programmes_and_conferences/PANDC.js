@@ -8,6 +8,7 @@ const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 // Importing subRoutes
 const dpaRouter = require("./d_p_a");
 const pigsRotuer = require("./p_i_g_s");
+const ppcswRouter = require("./p_p_c_s_w");
 
 // Configuring the Backend middlewares and dependencies
 const router = express.Router({ strict: true });
@@ -33,6 +34,9 @@ router.use("/dpa", dpaRouter);
 
 // Sub-route for 'pigs' <Programmes invited to as Guest Speaker>
 router.use("/pigs", pigsRotuer);
+
+// Sub-route for 'ppcsw' <Papers Presented in Conference, Seminar, Workshop>
+router.use("/ppcsw", ppcswRouter);
 
 // -----------------------------------------------------------------------
 
