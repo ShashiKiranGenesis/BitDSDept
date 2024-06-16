@@ -7,6 +7,7 @@ const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 
 // Importing subRoutes
 const dpaRouter = require("./d_p_a");
+const pigsRotuer = require("./p_i_g_s");
 
 // Configuring the Backend middlewares and dependencies
 const router = express.Router({ strict: true });
@@ -27,8 +28,11 @@ router.use("/", function (req, res, next) {
 
 // ------------------------Protected Routes-------------------------------
 
-// Sub-route for 'ocrpc' <On-Going Research Projects and Consultancies>
+// Sub-route for 'dpa' <Development Program for Students/Faculty Attended>
 router.use("/dpa", dpaRouter);
+
+// Sub-route for 'pigs' <Programmes invited to as Guest Speaker>
+router.use("/pigs", pigsRotuer);
 
 // -----------------------------------------------------------------------
 
