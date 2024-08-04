@@ -8,7 +8,7 @@ const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 // Importing subRoutes
 const BPRouter = require("./books_published");
 const acpRouter = require("./a_c_p");
-// const ppjRouter = require("./p_p_j");
+const ppjRouter = require("./p_p_j");
 const fpcRouter = require("./f_p_c");
 
 // Configuring the Backend middlewares and dependencies
@@ -40,7 +40,7 @@ router.use("/acp", acpRouter);
 router.use("/fpc", fpcRouter);
 
 // Sub-route for 'ppj' <Published Papers in Journals>
-// router.use("/ppj", ppjRouter);
+router.use("/ppj", ppjRouter);
 
 // -----------------------------------------------------------------------
 
