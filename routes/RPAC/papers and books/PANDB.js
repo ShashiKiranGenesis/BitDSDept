@@ -2,13 +2,14 @@
 const express = require("express");
 
 // Importing Server Files
-const notAuthorizedResponse = require("./../../helpers/response/notAuthorizedResponse");
-const isAuthorised = require("./../../helpers/authorization/isAuthorised");
+const notAuthorizedResponse = require("./../../../helpers/response/notAuthorizedResponse");
+const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 
 // Importing subRoutes
-const researchRoutes = require("./research/RESEARCH");
-const pandcRoutes = require("./programmes_and_conferences/PANDC");
-const pandbRoutes = require("./papers and books/PANDB");
+// const BPRouter = require("./books_published");
+// const acpRouter = require("./a_c_p");
+// const ppjRouter = require("./p_p_j");
+const fcpRouter = require("./f_c_p");
 
 // Configuring the Backend middlewares and dependencies
 const router = express.Router({ strict: true });
@@ -29,15 +30,17 @@ router.use("/", function (req, res, next) {
 
 // ------------------------Protected Routes-------------------------------
 
-// Sub-route for research sub-section of the RPAC
-router.use("/research", researchRoutes);
+// Sub-route for 'books published'
+// router.use("/books_published", BPRouter);
 
-// Sub-route for programmes and conferences sub-section of the RPAC
-router.use("/pandc", pandcRoutes);
+// Sub-route for 'acp' <Articles or Chapters Published>
+// router.use("/acp", acpRouter);
 
-// Sub-route for papers and books sub-section of the RPAC
-router.use("/pandb", pandbRoutes);
+// Sub-route for 'fpc' <Full Papers in Conference>
+router.use("/fcp", fcpRouter);
 
+// Sub-route for 'ppj' <Published Papers in Journals>
+// router.use("/ppj", ppjRouter);
 
 // -----------------------------------------------------------------------
 
