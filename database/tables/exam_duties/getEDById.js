@@ -46,8 +46,6 @@ async function getExaminationDutyById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

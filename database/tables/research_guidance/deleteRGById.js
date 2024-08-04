@@ -46,8 +46,6 @@ async function deleteRGById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

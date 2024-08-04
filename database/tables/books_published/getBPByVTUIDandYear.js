@@ -51,8 +51,6 @@ async function getBPByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

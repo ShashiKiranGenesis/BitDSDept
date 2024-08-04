@@ -45,8 +45,6 @@ async function deleteExaminationDutyById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -51,8 +51,6 @@ async function insertMultipleITRE(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

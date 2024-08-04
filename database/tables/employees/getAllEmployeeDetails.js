@@ -44,8 +44,6 @@ const getAllEmployeeDetails = async function (arguments) {
             }
         );
     } finally {
-        connection.end();
-
         return result;
     }
 }

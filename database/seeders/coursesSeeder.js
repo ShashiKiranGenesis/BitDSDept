@@ -53,8 +53,6 @@ const seedCourses = `
         console.log("ERROR    DB_SD_08");
         console.log(error);
 
-    } finally {
-        connection.end();
     }
 
 })();

@@ -50,7 +50,6 @@ async function assignDesignationByVtuId(vtu_id, title) {
             arguments
         );
     } finally {
-        connection.end();
 
         return result;
     }

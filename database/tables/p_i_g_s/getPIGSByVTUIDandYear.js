@@ -51,8 +51,6 @@ async function getPIGSByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

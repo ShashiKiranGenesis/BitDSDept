@@ -51,8 +51,6 @@ async function getPPJByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

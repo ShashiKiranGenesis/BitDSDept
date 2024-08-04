@@ -61,8 +61,6 @@ async function insertMultipleACP(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

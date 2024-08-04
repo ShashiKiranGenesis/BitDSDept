@@ -46,8 +46,6 @@ async function deletePDAById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -79,8 +79,6 @@ async function insertSinglePPJ(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

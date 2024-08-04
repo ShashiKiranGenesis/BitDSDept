@@ -47,8 +47,6 @@ async function getISTHByVTUAndAcademicYear(vtu_id, academic_year_start, academic
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

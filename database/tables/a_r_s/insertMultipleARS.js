@@ -51,8 +51,6 @@ async function insertMultipleARS(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

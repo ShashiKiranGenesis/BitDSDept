@@ -69,8 +69,6 @@ async function insertSingleExaminationDuty(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

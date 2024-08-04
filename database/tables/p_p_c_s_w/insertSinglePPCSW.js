@@ -57,8 +57,6 @@ async function insertSinglePPCSW(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

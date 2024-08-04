@@ -46,8 +46,6 @@ async function getACPById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

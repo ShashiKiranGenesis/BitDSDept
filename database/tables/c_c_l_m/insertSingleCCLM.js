@@ -63,8 +63,6 @@ async function insertSingleCCM(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

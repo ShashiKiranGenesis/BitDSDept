@@ -60,8 +60,6 @@ async function getCCMByVtuIdAndAcademicYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

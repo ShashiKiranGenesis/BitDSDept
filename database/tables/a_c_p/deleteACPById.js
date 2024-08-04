@@ -45,8 +45,6 @@ async function deleteACPById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -67,8 +67,6 @@ async function insertSingleECF(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

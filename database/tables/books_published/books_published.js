@@ -48,7 +48,5 @@ const alterTableQuery = `
     } catch (error) {
         console.error("ERROR    CODE: DB_TC_20");
         console.error(error.message);
-    } finally {
-        connection.end();
     }
 })();

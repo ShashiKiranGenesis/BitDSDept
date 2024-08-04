@@ -41,8 +41,6 @@ async function registerUser(vtu_id, password) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 };

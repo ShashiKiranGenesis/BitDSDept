@@ -35,8 +35,5 @@ const seedDesignations = `
         console.log("ERROR    DB_SD_03");
         console.log(error.sqlMessage);
 
-    } finally {
-        connection.end();
     }
-
 })();

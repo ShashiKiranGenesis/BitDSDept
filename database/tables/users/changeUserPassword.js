@@ -37,8 +37,6 @@ const changeUserPassword = async function (vtu_id, password) {
             "Classified"
         )
     } finally {
-        connection.end();
-
         return result;
     }
 };

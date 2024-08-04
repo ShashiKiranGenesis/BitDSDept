@@ -60,8 +60,6 @@ async function getARSByVtuIdAndAcademicYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

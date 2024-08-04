@@ -63,8 +63,6 @@ async function insertSingleITRE(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

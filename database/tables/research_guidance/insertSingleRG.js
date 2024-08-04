@@ -73,8 +73,6 @@ async function insertSingleResearchGuidance(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

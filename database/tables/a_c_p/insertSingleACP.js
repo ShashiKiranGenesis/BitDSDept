@@ -59,8 +59,6 @@ async function insertSingleAPC(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

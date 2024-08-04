@@ -44,8 +44,6 @@ async function getFPCByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

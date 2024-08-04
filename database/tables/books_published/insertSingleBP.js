@@ -59,8 +59,6 @@ async function insertSingleBP(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -44,8 +44,6 @@ async function getISTHById(id) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

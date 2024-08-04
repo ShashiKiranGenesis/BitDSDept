@@ -46,8 +46,6 @@ async function getRGById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

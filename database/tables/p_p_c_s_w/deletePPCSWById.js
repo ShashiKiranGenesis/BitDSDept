@@ -46,8 +46,6 @@ async function deletePPCSWById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

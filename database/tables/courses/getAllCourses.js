@@ -33,8 +33,6 @@ async function getAllCourses() {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

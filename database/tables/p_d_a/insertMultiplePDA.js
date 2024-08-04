@@ -52,8 +52,6 @@ async function insertMultiplePDA(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

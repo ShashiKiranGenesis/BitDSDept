@@ -28,7 +28,5 @@ const alterTableQuery = `
 	} catch (error) {
 		console.error("ERROR    CODE: DB_TC_03");
 		console.error(error);
-	} finally {
-		connection.end();
 	}
 })();

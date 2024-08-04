@@ -46,8 +46,6 @@ async function getFPCById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

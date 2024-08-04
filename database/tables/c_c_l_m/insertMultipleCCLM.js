@@ -51,8 +51,6 @@ async function insertMultipleCCM(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

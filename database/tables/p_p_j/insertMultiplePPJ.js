@@ -61,8 +61,6 @@ async function insertMultiplePPJ(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

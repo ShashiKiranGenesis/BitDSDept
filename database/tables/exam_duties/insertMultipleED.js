@@ -51,8 +51,6 @@ async function insertMultipleExaminationDuties(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

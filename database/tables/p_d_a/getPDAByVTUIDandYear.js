@@ -47,8 +47,6 @@ async function getPDAByVtuIdAndDateRange(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

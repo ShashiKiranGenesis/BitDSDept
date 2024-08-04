@@ -42,8 +42,6 @@ async function deleteCourse(id) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

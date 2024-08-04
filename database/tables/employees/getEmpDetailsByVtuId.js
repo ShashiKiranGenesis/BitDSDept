@@ -41,7 +41,6 @@ async function getEmpDetailsByVtuId(vtu_id) {
         console.log("ERROR    Something went wrong when fetching Employee(1) Details");
         result = generateResponse(true, error.message, error.errno, payload);
     } finally {
-        connection.end();
         return result;
     }
 }

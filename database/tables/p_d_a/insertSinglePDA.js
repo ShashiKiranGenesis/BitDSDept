@@ -52,8 +52,6 @@ async function insertSinglePDA(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

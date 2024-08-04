@@ -30,8 +30,5 @@ const seedAcLevels = `
         console.log("ERROR    DB_SD_07");
         console.log(error);
 
-    } finally {
-        connection.end();
-    }
-
+    } 
 })();

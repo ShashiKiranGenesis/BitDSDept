@@ -48,8 +48,6 @@ async function insertMultipleISTH(rows) {
         );
         
     } finally {
-        connection.end();
-
         return result;
     }
 }

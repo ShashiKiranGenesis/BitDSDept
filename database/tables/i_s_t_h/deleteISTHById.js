@@ -42,8 +42,6 @@ async function deleteISTHById(id) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

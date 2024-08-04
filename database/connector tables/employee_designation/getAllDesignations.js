@@ -44,8 +44,6 @@ async function getAllDesignations() {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

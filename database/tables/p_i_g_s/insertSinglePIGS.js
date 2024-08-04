@@ -57,8 +57,6 @@ async function insertSinglePIGS(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

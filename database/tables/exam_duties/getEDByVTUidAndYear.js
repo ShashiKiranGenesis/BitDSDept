@@ -60,8 +60,6 @@ async function getExaminationDutiesByVtuIdAndAcademicYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

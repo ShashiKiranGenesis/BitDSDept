@@ -58,8 +58,6 @@ async function getLevelByVtuId(vtu_id) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -46,8 +46,6 @@ async function deleteECFById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -46,8 +46,6 @@ async function getPDAById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

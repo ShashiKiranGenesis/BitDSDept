@@ -60,8 +60,6 @@ async function insertMultipleDPA(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -45,8 +45,6 @@ async function deleteCCMById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -46,8 +46,6 @@ async function getOCRPCById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

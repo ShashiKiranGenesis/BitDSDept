@@ -76,8 +76,6 @@ async function insertSingleOCRPC(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

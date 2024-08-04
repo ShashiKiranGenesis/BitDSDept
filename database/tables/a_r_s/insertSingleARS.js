@@ -69,8 +69,6 @@ async function insertSingleARS(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

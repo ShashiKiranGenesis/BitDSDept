@@ -46,8 +46,6 @@ async function getECFById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

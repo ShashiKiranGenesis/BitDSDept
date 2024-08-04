@@ -45,8 +45,6 @@ async function insertNewDesignation(title, level) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

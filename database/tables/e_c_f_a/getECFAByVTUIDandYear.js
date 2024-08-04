@@ -60,8 +60,6 @@ async function getECFByVtuIdAndAcademicYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

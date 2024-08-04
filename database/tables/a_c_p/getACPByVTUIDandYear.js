@@ -51,8 +51,6 @@ async function getACPByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

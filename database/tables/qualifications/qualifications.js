@@ -34,7 +34,5 @@ const alterTableQuery = `
     } catch (error) {
         console.error("ERROR    CODE: DB_TC_06");
         console.error(error.message);
-    } finally {
-        connection.end();
     }
 })();

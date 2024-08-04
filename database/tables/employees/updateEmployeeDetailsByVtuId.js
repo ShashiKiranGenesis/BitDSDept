@@ -50,8 +50,6 @@ async function updateEmployeeDetailsByVtu_Id(vtu_id, request) {
                 error.errno,
                 arguments
             )
-        } finally {
-            connection.end();
         }
     }
 

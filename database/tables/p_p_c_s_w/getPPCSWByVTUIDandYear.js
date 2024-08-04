@@ -51,8 +51,6 @@ async function getPPCSWByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

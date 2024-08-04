@@ -60,8 +60,6 @@ async function getRGByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -42,8 +42,6 @@ async function getCourseById(id) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

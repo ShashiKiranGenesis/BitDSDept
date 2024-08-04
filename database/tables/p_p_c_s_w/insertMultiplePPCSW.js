@@ -59,8 +59,6 @@ async function insertMultiplePPCSW(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

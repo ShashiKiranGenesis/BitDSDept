@@ -46,8 +46,6 @@ async function getITREById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

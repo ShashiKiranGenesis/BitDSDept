@@ -45,8 +45,6 @@ async function deleteARSById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -45,8 +45,6 @@ async function deleteITREById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

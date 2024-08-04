@@ -45,8 +45,6 @@ async function deletePPJById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

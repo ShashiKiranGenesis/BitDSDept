@@ -46,8 +46,6 @@ async function getPPJById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

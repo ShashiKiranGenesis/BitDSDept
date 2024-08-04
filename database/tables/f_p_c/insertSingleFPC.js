@@ -58,8 +58,6 @@ async function insertSingleFPC(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

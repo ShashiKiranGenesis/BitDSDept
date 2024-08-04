@@ -43,8 +43,6 @@ async function insertSingleISTH(vtu_id, course_name, semester, tce, pce, academi
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

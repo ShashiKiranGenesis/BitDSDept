@@ -51,8 +51,6 @@ async function getDPAByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

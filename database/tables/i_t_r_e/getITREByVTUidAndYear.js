@@ -60,8 +60,6 @@ async function getITREByVtuIdAndAcademicYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

@@ -59,8 +59,6 @@ async function getOCRPCByVtuIdAndYear(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

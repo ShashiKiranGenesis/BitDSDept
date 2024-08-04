@@ -52,8 +52,6 @@ async function insertMultipleOCRPC(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

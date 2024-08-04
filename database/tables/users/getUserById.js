@@ -50,8 +50,6 @@ async function getUserByVtuID(vtu_id) {
             vtu_id
         );
     } finally {
-        connection.end();
-
         return result;
     }
 };

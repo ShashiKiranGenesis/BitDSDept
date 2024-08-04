@@ -45,8 +45,6 @@ async function deleteBPById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

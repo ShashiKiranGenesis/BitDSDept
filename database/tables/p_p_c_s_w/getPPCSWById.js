@@ -46,8 +46,6 @@ async function getPPCSWById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

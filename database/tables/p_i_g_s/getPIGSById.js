@@ -46,8 +46,6 @@ async function getPIGSById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

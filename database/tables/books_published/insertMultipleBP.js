@@ -61,8 +61,6 @@ async function insertMultipleBooksPublished(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

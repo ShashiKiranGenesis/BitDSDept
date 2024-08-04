@@ -46,8 +46,6 @@ async function getCCMById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

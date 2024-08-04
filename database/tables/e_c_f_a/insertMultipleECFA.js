@@ -52,8 +52,6 @@ async function insertMultipleECF(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

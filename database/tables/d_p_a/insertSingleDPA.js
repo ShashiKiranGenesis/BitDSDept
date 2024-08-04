@@ -56,8 +56,6 @@ async function insertSingleDPA(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

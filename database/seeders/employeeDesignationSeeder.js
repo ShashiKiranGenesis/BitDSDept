@@ -56,8 +56,5 @@ VALUES
         console.log("ERROR    DB_SD_05");
         console.log(error);
     
-    } finally {
-        connection.end();
-    }
-    
+    } 
 })();

@@ -46,8 +46,6 @@ async function getBooksPublishedById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

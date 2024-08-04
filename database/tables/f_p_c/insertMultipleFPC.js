@@ -61,8 +61,6 @@ async function insertMultipleFPC(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

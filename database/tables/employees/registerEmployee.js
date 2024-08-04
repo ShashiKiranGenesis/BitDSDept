@@ -100,8 +100,6 @@ async function registerEmployee(employee) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 };

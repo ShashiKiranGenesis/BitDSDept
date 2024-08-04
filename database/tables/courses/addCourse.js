@@ -43,8 +43,6 @@ async function addCourse(name, a_level, cpw, lpw, code) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

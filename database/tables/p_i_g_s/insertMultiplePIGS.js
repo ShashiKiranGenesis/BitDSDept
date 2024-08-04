@@ -59,8 +59,6 @@ async function insertMultiplePIGS(rows) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

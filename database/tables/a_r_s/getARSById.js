@@ -46,8 +46,6 @@ async function getARSById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }

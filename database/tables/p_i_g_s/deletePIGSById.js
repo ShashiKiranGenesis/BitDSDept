@@ -46,8 +46,6 @@ async function deletePIGSById(data) {
         );
 
     } finally {
-        connection.end();
-
         return result;
     }
 }
