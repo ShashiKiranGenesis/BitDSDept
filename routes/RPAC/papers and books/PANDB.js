@@ -9,7 +9,7 @@ const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 // const BPRouter = require("./books_published");
 // const acpRouter = require("./a_c_p");
 // const ppjRouter = require("./p_p_j");
-const fcpRouter = require("./f_c_p");
+const fpcRouter = require("./f_p_c");
 
 // Configuring the Backend middlewares and dependencies
 const router = express.Router({ strict: true });
@@ -37,7 +37,7 @@ router.use("/", function (req, res, next) {
 // router.use("/acp", acpRouter);
 
 // Sub-route for 'fpc' <Full Papers in Conference>
-router.use("/fcp", fcpRouter);
+router.use("/fpc", fpcRouter);
 
 // Sub-route for 'ppj' <Published Papers in Journals>
 // router.use("/ppj", ppjRouter);
