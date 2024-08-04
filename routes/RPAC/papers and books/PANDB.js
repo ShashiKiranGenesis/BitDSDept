@@ -7,7 +7,7 @@ const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 
 // Importing subRoutes
 // const BPRouter = require("./books_published");
-// const acpRouter = require("./a_c_p");
+const acpRouter = require("./a_c_p");
 // const ppjRouter = require("./p_p_j");
 const fpcRouter = require("./f_p_c");
 
@@ -34,7 +34,7 @@ router.use("/", function (req, res, next) {
 // router.use("/books_published", BPRouter);
 
 // Sub-route for 'acp' <Articles or Chapters Published>
-// router.use("/acp", acpRouter);
+router.use("/acp", acpRouter);
 
 // Sub-route for 'fpc' <Full Papers in Conference>
 router.use("/fpc", fpcRouter);
