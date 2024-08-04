@@ -17,6 +17,7 @@ const rpacRoutes = require("./routes/RPAC/RPAC");
 //Imports from server files
 const { HOUR, DAY } = require("./helpers/time");
 const routeNotFoundResponse = require("./helpers/response/routeNotFoundResponse");
+const connect = require("./database/connect");
 
 //Configuring the Backend middlewares and dependencies
 const sessionOpts = {
@@ -74,6 +75,9 @@ app.use("/", function (req, res) {
 
 //Server Turns ON HERE
 
-app.listen(port, function (req, res) {
+app.listen(port, async function (req, res) {
     console.log("PASS    CODE: SERV_ST_01");
+
+    // The First Connection to DB is Done Here
+    await connect();
 });
