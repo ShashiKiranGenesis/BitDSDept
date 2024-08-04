@@ -6,7 +6,7 @@ const notAuthorizedResponse = require("./../../../helpers/response/notAuthorized
 const isAuthorised = require("./../../../helpers/authorization/isAuthorised");
 
 // Importing subRoutes
-// const BPRouter = require("./books_published");
+const BPRouter = require("./books_published");
 const acpRouter = require("./a_c_p");
 // const ppjRouter = require("./p_p_j");
 const fpcRouter = require("./f_p_c");
@@ -31,7 +31,7 @@ router.use("/", function (req, res, next) {
 // ------------------------Protected Routes-------------------------------
 
 // Sub-route for 'books published'
-// router.use("/books_published", BPRouter);
+router.use("/books_published", BPRouter);
 
 // Sub-route for 'acp' <Articles or Chapters Published>
 router.use("/acp", acpRouter);
